@@ -1,0 +1,866 @@
+/*
+Copyright (C) 2021 Ailin Mustafayeva <mustailin@gmail.com>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+
+/* 
+    Created on : Jul 26, 2021, 1:26:27 PM
+    Author     : Ailin Mustafayeva <mustailin@gmail.com>
+*/
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
+}
+
+
+/**
+ * Material Icons Styles
+ */
+
+
+/* Colors */
+
+.material-icons.green-700 {
+    color: #689f38;
+}
+
+.material-icons.yellow-700 {
+    color: #fbc02d;
+}
+
+.material-icons.red-700 {
+    color: #d32f2f;
+}
+
+
+/* Rules for sizing the icon. */
+
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+
+/* Rules for using icons as black on a light background. */
+
+.material-icons.md-dark {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.material-icons.md-dark.md-inactive {
+    color: rgba(0, 0, 0, 0.26);
+}
+
+
+/* Rules for using icons as white on a dark background. */
+
+.material-icons.md-light {
+    color: rgba(255, 255, 255, 1);
+}
+
+.material-icons.md-light.md-inactive {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+
+/**
+ * Toolbar Styles
+ */
+
+.md-toolbar-tools span {
+    padding: 0px 25px;
+}
+
+@media only screen and (min-width: 700px) {
+    .md-toolbar-tools span,
+    .md-toolbar-tools a {
+        padding: 0px 50px;
+    }
+}
+
+.md-toolbar-tools a.title {
+    font-size: 24px;
+}
+
+.md-toolbar-tools .gradebook-title {
+    text-align: right;
+}
+
+.md-toolbar-tools md-icon,
+.md-toolbar-tools span,
+.md-toolbar-tools a {
+    color: white;
+}
+
+
+/**
+ * Sidenav Styles
+ */
+
+
+/*.site-sidenav.md-locked-open {
+    width: 256px;
+    min-width: 256px;
+    max-width: 256px;
+}*/
+
+.main-background {
+    text-align: center;
+}
+
+.main-background img {
+    width: 75%;
+}
+
+.site-sidenav .nav-header {
+    text-align: center;
+}
+
+.site-sidenav .nav-header img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 120px;
+}
+
+.nav-header .nav-header-title {
+    font-size: 8pt;
+}
+
+.site-sidenav .menu-title-button md-icon,
+.site-sidenav .menu-subtitle-button md-icon {
+    line-height: 40px;
+    float: right;
+}
+
+.site-sidenav .add-button {
+    padding: 2px 15px;
+    margin: 0;
+    height: 50px;
+    width: 100%;
+    border-radius: 0;
+    font-size: 14px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.site-sidenav .menu-button {
+    padding: 6px 15px;
+    margin: 0;
+    height: 50px;
+    width: 100%;
+    border-radius: 0;
+    font-size: 14px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.site-sidenav .menu-button.accent {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.site-sidenav .menu-button span {
+    display: inline-block;
+    line-height: 38px;
+}
+
+.site-sidenav .menu-title-button {
+    padding: 0 15px;
+    margin: 0;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    border-radius: 0;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.site-sidenav .menu-subtitle-button {
+    padding: 0 15px 0 25px;
+    margin: 0;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    border-radius: 0;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.site-sidenav .menu-item-button {
+    padding: 0 15px;
+    margin: 0;
+    height: 40px;
+    line-height: 40px;
+    width: 256px;
+    border-radius: 0;
+    font-size: 14px;
+    text-align: left;
+    text-transform: none;
+}
+
+.site-sidenav .md-button.md-icon-button {
+    margin: 0 8px 0 0;
+    height: 40px;
+    min-width: 0;
+    line-height: 40px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.site-sidenav .menu-item-button span {
+    display: inline-block;
+    line-height: 40px;
+}
+
+.site-sidenav div {
+    padding: 0px 15px;
+}
+
+.site-sidenav .menu div {
+    padding: 0;
+}
+
+.site-sidenav div.menu-static-row {
+    height: 50px;
+    line-height: 50px;
+}
+
+.site-sidenav .add-icon {
+    margin: 5px;
+    height: 36px;
+    width: 36px;
+    font-size: 36px;
+    color: #ff4081;
+}
+
+.site-sidenav .gradebook-icon {
+    margin: 8px 10px;
+    height: 24px;
+    width: 24px;
+    font-size: 24px;
+}
+
+.site-sidenav .info-icon {
+    margin: 8px;
+    height: 24px;
+    width: 24px;
+    font-size: 24px;
+}
+
+.site-sidenav .icon {
+    margin: 5px 10px;
+    height: 28px;
+    width: 28px;
+    font-size: 28px;
+}
+
+
+/**
+ * Main Frame Styles
+ */
+
+.main-frame {
+    padding: 0px;
+}
+
+@media only screen and (min-width: 600px) {
+    .main-frame {
+        padding: 0px 40px;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    .main-frame {
+        padding: 0px 70px;
+    }
+}
+
+.main-frame md-pagination-wrapper.md-center-tabs {
+    left: 0px;
+    position: absolute;
+}
+
+.main-frame md-tab-item {
+    min-width: 140px;
+}
+
+.main-frame div.video-row {
+    width: 70%;
+}
+
+@media only screen and (max-width: 1600px) {
+    .main-frame div.video-row {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+    .main-frame div.video-row {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .main-frame div.video-row {
+        width: 100%;
+    }
+}
+
+.main-frame .videoWrapper {
+    position: relative;
+    padding-bottom: 62.5%;
+    height: 0;
+    margin-top: 48px;
+}
+
+.main-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.main-frame .links-row {
+    margin: 48px 0;
+}
+
+.main-frame .links-row a {
+    margin: 0 12px;
+}
+
+.main-frame .view {
+    margin-bottom: 48px;
+}
+
+.main-frame h1.admin-table-title {
+    margin-bottom: -16px;
+}
+
+
+/**
+ * Footer Styles
+ */
+
+.page-footer {
+    padding: 0% 5%;
+    min-height: 50px;
+    max-height: 50px;
+    height: 50px;
+    background-color: #f5f5f5;
+}
+
+.page-footer a,
+.page-footer span {
+    text-decoration: none;
+    color: #000000;
+    opacity: 0.54;
+}
+
+
+/**
+ * Login Page Styles
+ */
+
+.login-card {
+    padding: 0 15px;
+    margin: 60px auto 30px auto;
+    max-width: 500px;
+}
+
+@media only screen and (max-width: 600px) {
+    .login-card {
+        margin-top: 30px;
+    }
+}
+
+.login-card md-card {
+    padding: 10px;
+}
+
+.login-card .logo-image {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(#38549A, #6391FF);
+    text-align: center;
+}
+
+.logo-image img {
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+}
+
+.login-image-title {
+    color: #9e9e9e;
+    text-align: right;
+    position: absolute;
+    width: 100%;
+    right: 15px;
+    bottom: 20px;
+}
+
+
+/**
+ * Admin Table Styles
+ */
+
+.table.admin td {
+    text-align: left;
+    padding: 0 10px;
+}
+
+.table.admin td.controls-col {
+    padding: 1px;
+}
+
+.table .header-primary.admin th {
+    border-bottom: 2px solid #d0d0d0;
+    cursor: context-menu;
+}
+
+.table .control {
+    font-weight: normal;
+    margin: 0;
+    min-height: 30px;
+    line-height: 30px;
+    width: 100%;
+    border-radius: 0;
+    font-size: 16px;
+    text-transform: none;
+}
+
+@-moz-document url-prefix() {
+    .table md-icon {
+        vertical-align: text-bottom;
+    }
+}
+
+.table.admin md-switch span {
+    display: block;
+    font-size: 14px;
+}
+
+.table.admin caption {
+    text-align: left;
+}
+
+.table.admin caption md-icon {
+    margin: 0 8px;
+}
+
+.table.admin caption .filters-header {
+    border-bottom: 1px solid #d0d0d0;
+    margin-top: 8px;
+}
+
+.table.admin caption .filters-header div {
+    outline: none;
+    cursor: context-menu;
+}
+
+.table.admin caption .filters {
+    background-color: #fafafa;
+}
+
+.table.admin caption .number-filter {
+    max-width: 120px;
+}
+
+.table.admin caption .text-filter {
+    max-width: 200px;
+}
+
+
+/**
+ * Gradebook Page Styles
+ */
+
+.table {
+    border-collapse: collapse;
+}
+
+.table a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.table td,
+.table th {
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #f5f5f5;
+    border-bottom: 1px solid #d0d0d0;
+    vertical-align: middle;
+    min-width: 110px;
+}
+
+.table .header-primary th {
+    border-right: 1px solid #d0d0d0;
+    padding: 5px 10px;
+    vertical-align: top;
+    text-align: left;
+    cursor: pointer;
+    height: 58px;
+    outline: none;
+}
+
+.table .header-secondary th {
+    border-top: 1px solid #d0d0d0;
+    border-right: 1px solid #d0d0d0;
+    border-bottom: 2px solid #d0d0d0;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    padding: 2px 10px;
+    cursor: context-menu;
+}
+
+.table td.table-num-col,
+.table th.table-num-col {
+    text-align: center;
+    padding: 5px 10px;
+    min-width: 15px;
+    cursor: context-menu;
+}
+
+.table td.table-name-col,
+.table th.table-name-col {
+    min-width: 140px;
+    text-align: left;
+    padding: 5px 10px;
+    cursor: context-menu;
+}
+
+.table .add .md-button {
+    margin-left: 31px;
+    margin-right: 31px;
+}
+
+.table .add-button {
+    height: 36px;
+    width: 36px;
+    font-size: 36px;
+}
+
+.table .grade {
+    font-weight: normal;
+    margin: 0;
+    min-height: 30px;
+    line-height: 30px;
+    width: 100%;
+    border-radius: 0;
+    font-size: 16px;
+    text-transform: none;
+}
+
+.table .md-button[disabled].grade {
+    color: rgba(0, 0, 0, 0.87);
+    background-color: transparent;
+    cursor: default;
+}
+
+.table .max-grade {
+    color: rgba(0, 0, 0, 0.38);
+}
+
+
+/**
+ * Attendance Table Styles
+ */
+
+.table.attendance {
+    min-width: 222px;
+}
+
+.table.attendance td,
+.table.attendance th {
+    min-width: 40px;
+    height: 30px;
+}
+
+.table.attendance td.table-num-col,
+.table.attendance th.table-num-col {
+    line-height: 30px;
+    padding: 1px 10px;
+    min-width: 15px;
+}
+
+.table.attendance td.table-name-col,
+.table.attendance th.table-name-col {
+    line-height: 30px;
+    padding: 1px 10px;
+    min-width: 140px;
+    max-width: 240px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.table.attendance .header-primary th.table-num-col,
+.table.attendance .header-primary th.table-name-col {
+    line-height: normal;
+    padding: 5px 10px;
+    height: 60px;
+}
+
+.table.attendance .header-secondary th.table-num-col,
+.table.attendance .header-secondary th.table-name-col {
+    padding: 2px 0;
+    height: 40px;
+}
+
+.table.attendance caption {
+    border: 1px solid #f5f5f5;
+    height: 59px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    min-width: 200px;
+    text-overflow: ellipsis;
+}
+
+.table.attendance caption a {
+    display: -webkit-box;
+    min-width: 200px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table.attendance .header-secondary th {
+    height: 40px;
+}
+
+.table.attendance caption.header-primary {
+    border-right: 1px solid #d0d0d0;
+    padding: 5px 10px;
+    vertical-align: top;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+.table.attendance .attendance-button {
+    font-weight: normal;
+    margin: 0;
+    min-width: 30px;
+    max-height: 30px;
+    min-height: 30px;
+    line-height: 30px;
+    width: 100%;
+    border-radius: 0;
+    font-size: 16px;
+    text-transform: none;
+}
+
+@-moz-document url-prefix() {
+    .table.attendance .attendance-button md-icon {
+        vertical-align: text-bottom;
+    }
+}
+
+.table.attendance .md-button[disabled].attendance-button {
+    background-color: transparent;
+    cursor: default;
+}
+
+.table.attendance .md-button[disabled].attendance-button md-icon {
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.table.attendance .md-button[disabled].attendance-button md-icon.green-700 {
+    color: #689f38;
+}
+
+.table.attendance .md-button[disabled].attendance-button md-icon.yellow-700 {
+    color: #fbc02d;
+}
+
+.table.attendance .md-button[disabled].attendance-button md-icon.red-700 {
+    color: #d32f2f;
+}
+
+
+/**
+ * Dialog Styles
+ */
+
+.dialog.narrow {
+    max-width: 400px;
+    min-width: 400px;
+}
+
+@media only screen and (max-width: 700px) {
+    .dialog.narrow {
+        width: 400px;
+        max-width: 80%;
+        min-width: 60%;
+    }
+}
+
+.dialog {
+    max-width: 620px;
+    min-width: 620px;
+}
+
+@media only screen and (max-width: 700px) {
+    .dialog {
+        width: 620px;
+        max-width: 90%;
+        min-width: 90%;
+    }
+}
+
+.dialog .label {
+    margin: 16px 0 0 0;
+}
+
+.dialog .inline {
+    display: inline-block;
+}
+
+.dialog .form-row {
+    padding-bottom: 26px;
+}
+
+.dialog .details-row {
+    margin-bottom: 26px;
+}
+
+.dialog .details-row p,
+.dialog .details-row h1,
+.dialog .details-row h3 {
+    margin: 0;
+}
+
+.dialog .details-row div p {
+    padding: 0 20px 0 0;
+}
+
+.dialog .md-actions div {
+    width: 100%;
+}
+
+.dialog .md-toolbar-tools md-icon {
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.dialog .md-toolbar-tools md-icon:hover {
+    color: rgba(255, 255, 255, 1.0);
+}
+
+.dialog md-radio-button div.md-label {
+    height: 50px;
+}
+
+.dialog .warn {
+    color: #f50057;
+}
+
+.dialog md-select-label {
+    width: 100%;
+}
+
+.dialog .form-row button {
+    height: 36px;
+    margin-right: 0;
+}
+
+.dialog div.form-row {
+    padding-top: 26px;
+}
+
+.dialog .form-row md-select {
+    padding: 0;
+    height: 36px;
+}
+
+.dialog md-input-container md-select {
+    padding-bottom: 0;
+    height: 36px;
+}
+
+
+/**
+ * Dialog Chips Styles
+ */
+
+.dialog .custom-chips .md-chip {
+    position: relative;
+    padding-right: 35px;
+}
+
+.dialog .custom-chips .md-chip .md-chip-remove-container {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    margin-right: 0;
+    height: 24px;
+}
+
+.dialog .custom-chips .md-chip .md-chip-remove-container button.lecturerchip {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    line-height: 30px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    transition: background 0.15s linear;
+    display: block;
+}
+
+.dialog .custom-chips .md-chip .md-chip-remove-container button.lecturerchip md-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) scale(0.7);
+    color: white;
+    fill: white;
+}
+
+.dialog .custom-chips .md-chip .md-chip-remove-container button.lecturerchip:hover,
+.dialog .custom-chips .md-chip .md-chip-remove-container button.lecturerchip:focus {
+    background: rgba(255, 0, 0, 0.8);
+}

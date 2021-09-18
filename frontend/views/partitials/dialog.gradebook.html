@@ -1,0 +1,88 @@
+<md-dialog class="dialog" aria-label="Gradebook Form">
+    <form name="gradebookForm" ng-submit="submit()" novalidate>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>{{mode}} Gradebook</h2>
+                <span flex></span>
+                <md-button type="button" class="md-icon-button" ng-click="cancel()">
+                    <md-icon>close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div layout="column">
+                <md-input-container>
+                    <label>Subject</label>
+                    <input name="subject" md-maxlength="150" type="text" ng-model="gradebook.subject" required>
+                    <div ng-messages="gradebookForm.subject.$error" ng-if="gradebookForm.$submitted">
+                        <div ng-message="required">Subject is required.</div>
+                        <div ng-message="md-maxlength">Subject has to be less than 150 characters long.</div>
+                    </div>
+                </md-input-container>
+                <div layout="row">
+                    <md-input-container flex>
+                        <md-select name="group" ng-model="gradebook.groupId" placeholder="Group" md-on-open="loadGroups()" required>
+                            <md-option ng-value="group.id" ng-repeat="group in groups" selected="{{ group.number === gradebook.group.number ? 'selected' : '' }}">
+                                {{group.number}}
+                            </md-option>
+                        </md-select>
+                        <div ng-messages="gradebookForm.group.$error" ng-if="gradebookForm.$submitted">
+                            <div ng-message="required">Group is required.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container flex>
+                        <md-select name="semester" ng-model="gradebook.semesterId" placeholder="Semester" md-on-open="loadSemesters()" required>
+                            <md-option ng-value="semester.id" ng-repeat="semester in semesters" selected="{{ semester.academicYear === gradebook.semester.academicYear 
+                                                   && semester.name === gradebook.semester.name ? 'selected' : '' }}">
+                                {{semester.academicYear}} {{semester.name}}
+                            </md-option>
+                        </md-select>
+                        <div ng-messages="gradebookForm.semester.$error" ng-if="gradebookForm.$submitted">
+                            <div ng-message="required">Semester is required.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div class="form-row">
+                    <div layout="row">
+                        <md-select ng-model="lecturer" placeholder="Select Lecturer" flex>
+                            <md-option ng-value="lecturer" ng-repeat="lecturer in lecturers">{{lecturer.firstName}} {{lecturer.lastName}}</md-option>
+                        </md-select>
+                        <md-button type="button" ng-click="addLecturer()">Add</md-button>
+                        <md-button type="button" ng-click="clearSelection()">Clear</md-button>
+                    </div>
+                    <md-chips class="custom-chips" ng-model="selectedLecturers" md-autocomplete-snap md-require-match="true">
+                        <md-autocomplete md-selected-item="lecturer" md-search-text="searchText" md-items="item in querySearch(searchText)" md-selected-item-change="null" md-search-text-change="null" placeholder="Search for a lecturer">
+                            <span md-highlight-text="searchText">{{item.firstName}} {{item.lastName}}</span>
+                            <md-not-found>
+                                No matches found.
+                            </md-not-found>
+                        </md-autocomplete>
+                        <md-chip-template>
+                            <span>
+                                <strong>{{$chip.firstName}} {{$chip.lastName}}</strong>
+                            </span>
+                        </md-chip-template>
+                        <button md-chip-remove type="button" class="md-primary lecturerchip">
+                            <md-icon md-svg-icon="md-close"></md-icon>
+                        </button>
+                    </md-chips>
+                </div>
+                <md-input-container>
+                    <label>Description</label>
+                    <textarea ng-model="gradebook.description"></textarea>
+                </md-input-container>
+            </div>
+        </md-dialog-content>
+        <div class="md-actions" layout="column">
+            <md-progress-linear flex ng-if="dataLoading || groupsLoading || semestersLoading || lecturersLoading" class="md-accent" md-mode="indeterminate"></md-progress-linear>
+            <div layout="row" layout-align="end">
+                <md-button type="submit" class="md-primary">
+                    {{submitButton}}
+                </md-button>
+                <md-button type="button" ng-click="cancel()" class="md-primary">
+                    Cancel
+                </md-button>
+            </div>
+        </div>
+    </form>
+</md-dialog>

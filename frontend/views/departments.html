@@ -1,0 +1,56 @@
+<div class="main-frame" flex>
+
+    <h1 class="md-headline admin-table-title">Departments</h1>
+    <table class="table admin">
+        <caption>
+            <div layout="row" layout-align="end center">
+                <p class="md-body-2">Danger Zone!</p>
+                <md-switch ng-model="isDeletionEnabled" aria-label="Deletion Switch" ng-change="onChange(isDeletionEnabled)" class="md-warn">
+                    Deletion is {{status}}
+                </md-switch>
+            </div>
+        </caption>
+        <thead>
+            <tr class="header-primary admin">
+                <th class="table-num-col">Id</th>
+                <th>Faculty</th>
+                <th>Name</th>
+                <th colspan="2">Controls</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="department in departments">
+                <td class="table-num-col">{{department.id}}</td>
+                <td>{{department.faculty.name}}</td>
+                <td>{{department.name}}</td>
+                <td class="controls-col">
+                    <md-button class="control" ng-click="showEditDepartmentForm($event, department)">
+                        <md-icon>edit</md-icon>
+                        <span>Edit</span>
+                    </md-button>
+                </td>
+                <td class="controls-col">
+                    <md-button class="control" ng-click="showDeleteDepartmentDialog($event, department)" ng-disabled="!isDeletionEnabled">
+                        <md-icon>delete</md-icon>
+                        <span>Delete</span>
+                    </md-button>
+
+                </td>
+            </tr>
+            <tr>
+                <td class="table-num-col"></td>
+                <td></td>
+                <td></td>
+                <td colspan="2" class="controls-col">
+                    <md-button class="control" ng-click="showAddDepartmentForm($event)">
+                        <md-icon>add_circle</md-icon>
+                        <span>Add</span>
+                    </md-button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-include src="'views/partitials/footer.html'"></ng-include>

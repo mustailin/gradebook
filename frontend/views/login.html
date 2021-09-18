@@ -1,0 +1,34 @@
+<div class="main-frame" flex>
+    <div class="login-card">
+        <md-card class="md-whiteframe-z2">
+            <div class="logo-image">
+                <img src="images/logo-white.png" class="md-card-image" alt>
+                <span class="login-image-title">powered by <b>GradeBook™</b></span>
+            </div>
+            <form name="loginForm" ng-submit="login()" novalidate>
+                <md-card-content layout="column">
+                    <md-input-container>
+                        <label>Username</label>
+                        <input required name="username" type="email" ng-model="username">
+                        <div ng-messages="loginForm.username.$error" ng-if="loginForm.$submitted">
+                            <div ng-message="required">Username is required.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Password</label>
+                        <input required name="password" type="password" ng-model="password">
+                        <div ng-messages="loginForm.password.$error" ng-if="loginForm.$submitted">
+                            <div ng-message="required">Password is required.</div>
+                        </div>
+                    </md-input-container>
+                </md-card-content>
+                <div class="md-actions" layout="row" layout-align="end center">
+                    <md-button type="submit" ng-click="unlockSidebar()">Login</md-button>
+                </div>
+                <md-progress-linear ng-if="dataLoading" class="md-accent" md-mode="indeterminate"></md-progress-linear>
+            </form>
+        </md-card>
+    </div>
+</div>
+
+<ng-include src="'views/partitials/footer.html'"></ng-include>

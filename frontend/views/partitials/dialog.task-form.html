@@ -1,0 +1,96 @@
+<md-dialog class="dialog" aria-label="Task Form">
+    <form name="taskForm" ng-submit="submit()" novalidate>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>{{mode}} Task</h2>
+                <span flex></span>
+                <md-button type="button" class="md-icon-button" ng-click="cancel()">
+                    <md-icon>close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div layout="column">
+                <div ng-show="{{mode === 'Edit'}}" class="form-row" style="padding-top: 0;">
+                    <p class="warn" style="margin-top: 0;">WARNING! If you change any of Start Date, Length, On course days or Maximum grade fields, all associated with the task grades and attendances will be lost!</p>
+                </div>
+                <md-input-container ng-show="{{mode ===  'Add' && userRole === 'admin'}}">
+                    <md-select name="gradebook" ng-model="task.gradebookId" placeholder="Gradebook" ng-requiered="{{mode ===  'Add' && userRole === 'admin'}}">
+                        <md-option ng-value="gradebook" ng-repeat="gradebook in gradebooks">
+                            {{gradebook.subject}}
+                        </md-option>
+                    </md-select>
+                    <div ng-messages="taskForm.gradebook.$error" ng-if="taskForm.$submitted">
+                        <div ng-message="required">Gradebook is required.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Task Title</label>
+                    <input name="title" md-maxlength="150" required type="text" ng-model="task.title">
+                    <div ng-messages="taskForm.title.$error" ng-if="taskForm.$submitted">
+                        <div ng-message="required">Task title is required.</div>
+                        <div ng-message="md-maxlength">Task title has to be less than 150 characters long.</div>
+                    </div>
+                </md-input-container>
+                <div layout="row" layout-align="start center">
+                    <div flex="50">
+                        <md-input-container>
+                            <label>Start Date</label>
+                            <input name="date" required type="date" ng-model="task.startDate" ng-model-options="{ timezone: '-0400' }">
+                            <!-- Server Timezone patch -->
+                            <div ng-messages="taskForm.date.$error" ng-if="taskForm.$submitted">
+                                <div ng-message="required">Start date is required.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div flex="30">
+                        <md-input-container>
+                            <label>Length</label>
+                            <input name="length" required type="number" ng-model="task.taskLength" min="1" max="52">
+                            <div ng-messages="taskForm.length.$error" ng-if="taskForm.$submitted">
+                                <div ng-message="required">Length is required.</div>
+                                <div ng-message="max">Value must be less than or equal to 52.</div>
+                                <div ng-message="min">Value must be greater than or equal to 1.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div flex="20">Weeks</div>
+                </div>
+                <div class="form-row" layout="column" style="padding-top: 0;">
+                    <h3 class="label md-subhead">On course days</h3>
+                    <div>
+                        <md-checkbox class="inline" ng-model="task.onCourseMon" aria-label="Monday">Monday</md-checkbox>
+                        <md-checkbox class="inline" ng-model="task.onCourseTue" aria-label="Tuesday">Tuesday</md-checkbox>
+                        <md-checkbox class="inline" ng-model="task.onCourseWed" aria-label="Wednesday">Wednesday</md-checkbox>
+                        <md-checkbox class="inline" ng-model="task.onCourseThu" aria-label="Thursday">Thursday</md-checkbox>
+                        <md-checkbox class="inline" ng-model="task.onCourseFri" aria-label="Friday">Friday</md-checkbox>
+                    </div>
+                </div>
+                <md-input-container>
+                    <label>Maximum grade</label>
+                    <input name="maxGrade" required type="number" ng-model="task.maxGrade" min="0" max="100">
+                    <div ng-messages="taskForm.maxGrade.$error" ng-if="taskForm.$submitted">
+                        <div ng-message="required">Maximum grade is required.</div>
+                        <div ng-message="max">Value must be less than or equal to 100.</div>
+                        <div ng-message="min">Value must be greater than or equal to 0.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Description</label>
+                    <textarea ng-model="task.description"></textarea>
+                </md-input-container>
+            </div>
+        </md-dialog-content>
+        <div class="md-actions" layout="column">
+            <md-progress-linear flex ng-if="dataLoading || gradebooksLoading" class="md-accent" md-mode="indeterminate"></md-progress-linear>
+            <div layout="row" layout-align="end">
+                <md-button type="submit" class="md-primary">
+                    {{submitButton}}
+                </md-button>
+                <md-button type="button" ng-click="cancel()" class="md-primary">
+                    Cancel
+                </md-button>
+            </div>
+        </div>
+    </form>
+</md-dialog>

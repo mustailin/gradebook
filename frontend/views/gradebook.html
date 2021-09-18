@@ -1,0 +1,12 @@
+<div class="main-frame" flex>
+    <md-tabs md-selected="selectedIndex" md-border-bottom md-stretch-tabs="auto">
+        <md-tab label="Tasks" ui-sref="gradebook.tasks">
+            <div ui-view></div>
+        </md-tab>
+        <md-tab label="Attendance" ui-sref="gradebook.attendance">
+            <div ui-view></div>
+        </md-tab>
+    </md-tabs>
+</div>
+
+<ng-include src="'views/partitials/footer.html'"></ng-include>
