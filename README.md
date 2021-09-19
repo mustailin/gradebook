@@ -31,6 +31,7 @@ GradeBook is a digital implementation of traditional paper grade book that commo
 * AngularJS
 
 *Back End*
+* C#
 * .NET 5
 * Entity Framework Core
 * MySql.EntityFrameworkCore
