@@ -72,12 +72,6 @@ namespace GradeBookService.Controllers
                                     .Where(g => g.GradebookId == id)
                                     .ToListAsync());
 
-                    //lecturerViewModel.LecturerCollection = await _dbContext.LecturerHasGradebooks
-                    //    .Include(lhg => lhg.Lecturer)
-                    //    .Where(lhg => lhg.GradebookId == id)
-                    //    .Select(lhg => lhg.Lecturer)
-                    //    .ToListAsync();
-
                     return Ok(lecturerViewModel);
                 case RoleEnum.Student:
                     var studentViewModel = ConvertToStudentGradebooksViewModel(id, await _dbContext.StudentGradebooks
@@ -89,12 +83,6 @@ namespace GradeBookService.Controllers
                                         .ThenInclude(lhg => lhg.Lecturer)
                                     .Where(g => g.GradebookId == id)
                                     .ToListAsync());
-
-                    //studentViewModel.LecturerCollection = await _dbContext
-                    //    .LecturerHasGradebooks.Include(lhg => lhg.Lecturer)
-                    //    .Where(lhg => lhg.GradebookId == id)
-                    //    .Select(lhg => lhg.Lecturer)
-                    //    .ToListAsync();
 
                     return Ok(studentViewModel);
                 default:

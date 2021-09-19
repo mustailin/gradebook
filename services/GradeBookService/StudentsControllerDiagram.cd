@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="GradeBookService.Controllers.StudentsController">
+    <Position X="0.5" Y="0.5" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAQAAACAAAAAAAAAAAAAIAAAgAAEAAIAAAAIA=</HashCode>
+      <FileName>Controllers\StudentsController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Task" />
+      <Property Name="Student" />
+      <Property Name="GradeViewModel" />
+      <Property Name="StudentAttendance" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.Task">
+    <Position X="7" Y="0.5" Width="3.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.Student">
+    <Position X="0.75" Y="3.5" Width="3.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GradeBook.Data.ViewModels.GradeViewModel">
+    <Position X="4.5" Y="3.75" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.StudentAttendance">
+    <Position X="7" Y="5" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

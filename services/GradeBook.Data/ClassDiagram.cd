@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="GradeBook.Data.GradeBook.Admin">
+    <Position X="7" Y="12.25" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.AttendanceView">
+    <Position X="0.75" Y="4" Width="2.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Student" />
+      <Property Name="Gradebook" />
+      <Property Name="Task" />
+      <Property Name="Semester" />
+      <Property Name="Group" />
+      <Property Name="Attendance" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.Department">
+    <Position X="6.5" Y="0.5" Width="2" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Faculty" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.Faculty">
+    <Position X="9.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.Gradebook">
+    <Position X="6.75" Y="7.25" Width="2.75" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Group" />
+      <Property Name="Semester" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.Group">
+    <Position X="10.25" Y="7.5" Width="2" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Faculty" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.Lecturer">
+    <Position X="3.5" Y="11.25" Width="2.75" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Department" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.LecturerGradebook">
+    <Position X="9.5" Y="3" Width="2" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Gradebook" />
+      <Property Name="Lecturer" />
+      <Property Name="Group" />
+      <Property Name="Semester" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.LecturerHasGradebook">
+    <Position X="9.75" Y="12.5" Width="2" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Gradebook" />
+      <Property Name="Lecturer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.Semester">
+    <Position X="9.75" Y="10.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.Student">
+    <Position X="3.5" Y="3.5" Width="2.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Group" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.StudentAttendance">
+    <Position X="4" Y="0.5" Width="2" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Student" />
+      <Property Name="Task" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.StudentGrade">
+    <Position X="6.75" Y="10" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Student" />
+      <Property Name="Task" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.StudentGradebook">
+    <Position X="0.75" Y="0.5" Width="2" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Student" />
+      <Property Name="Group" />
+      <Property Name="Semester" />
+      <Property Name="Gradebook" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.Task">
+    <Position X="3.5" Y="6.75" Width="2.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Gradebook" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.TaskView">
+    <Position X="6.75" Y="3" Width="2" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Group" />
+      <Property Name="Semester" />
+      <Property Name="Gradebook" />
+      <Property Name="Task" />
+      <Property Name="Student" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.User">
+    <Position X="0.75" Y="8.75" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GradeBook.Data.GradeBook.UserRole">
+    <Position X="0.75" Y="11.5" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
