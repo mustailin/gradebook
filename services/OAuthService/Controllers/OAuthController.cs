@@ -30,21 +30,22 @@ namespace OAuthService.Controllers
 
             var decodedValues = Encoding.UTF8.GetString(Convert.FromBase64String(value.ToString().Split(' ').Last())).Split(":");
             if (decodedValues.Length != 2)
-                return BadRequest(new { Error = $"Incorrect Authorication header value. There is no Username and/or Password" });
+                return BadRequest(new { Error = $"Incorrect Authorization header value. There is no Username and/or Password" });
 
             var username = decodedValues.First();
-            var password = Hasher.PBKDF2Hash(decodedValues.Last());
 
-            var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == username
-                                                                       && u.Password == password
-                                                                       && u.IsEnabled
-                                                                       && u.IsAccountNonExpired
-                                                                       && u.IsAccountNonLocked
-                                                                       && u.IsCredentialsNonExpired);
+            var user = await _dbContext.Users
+                .FirstOrDefaultAsync(u => u.Email == username
+                                        && u.Password == Hasher.PBKDF2Hash(decodedValues.Last())
+                                        && u.IsEnabled
+                                        && u.IsAccountNonExpired
+                                        && u.IsAccountNonLocked
+                                        && u.IsCredentialsNonExpired);
             if (user == null)
                 return Unauthorized();
 
             var userInfo = new UserViewModel { Email = user.Email };
+            BaseUser resultUser;
             var admin = await _dbContext.Admins.FirstOrDefaultAsync(u => u.Email == username);
             if (admin == null)
             {
@@ -53,37 +54,22 @@ namespace OAuthService.Controllers
                 {
                     var student = await _dbContext.Students.FirstOrDefaultAsync(u => u.Email == username);
                     if (student == null)
-                    {
                         return Unauthorized();
-                    }
                     else
-                    {
-                        userInfo.FirstName = student.FirstName;
-                        userInfo.LastName = student.LastName;
-                        userInfo.Role = student.Role;
-                        userInfo.Id = student.Id;
-                    }
+                        resultUser = student;
                 }
                 else
-                {
-                    userInfo.FirstName = lecturer.FirstName;
-                    userInfo.LastName = lecturer.LastName;
-                    userInfo.Role = lecturer.Role;
-                    userInfo.Id = lecturer.Id;
-                }
+                    resultUser = lecturer;
             }
             else
-            {
-                userInfo.FirstName = admin.FirstName;
-                userInfo.LastName = admin.LastName;
-                userInfo.Role = admin.Role;
-                userInfo.Id = admin.Id;
-            }
+                resultUser = admin;
 
+            userInfo.FirstName = resultUser.FirstName;
+            userInfo.LastName = resultUser.LastName;
+            userInfo.Role = resultUser.Role;
+            userInfo.Id = resultUser.Id;
 
-            string token = JwtHelper.GenerateJSONWebToken(userInfo);
-
-            Response.Headers.Add("Token", token);
+            Response.Headers.Add("Token", JwtHelper.GenerateJSONWebToken(userInfo));
             return Ok(user);
         }
     }
