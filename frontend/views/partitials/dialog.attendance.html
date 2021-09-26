@@ -2,7 +2,7 @@
     <form ng-submit="update()">
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2>Update Attendance</h2>
+                <h2>Оновити відвідування</h2>
                 <span flex></span>
                 <md-button type="button" class="md-icon-button" ng-click="cancel()">
                     <md-icon>close</md-icon>
@@ -12,19 +12,19 @@
         <md-dialog-content>
             <div layout="column">
                 <div class="details-row">
-                    <p class="md-body-2">Student name</p>
+                    <p class="md-body-2">Ім'я студента</p>
                     <h1 class="md-headline">{{attendance.firstName}} {{attendance.lastName}}</h1>
                 </div>
                 <div class="details-row">
-                    <p class="md-body-2">Task title</p>
+                    <p class="md-body-2">Завдання</p>
                     <h3 class="md-title">{{attendance.title}}</h3>
                 </div>
                 <div class="details-row">
-                    <p class="md-body-2">Class Date</p>
+                    <p class="md-body-2">Дата</p>
                     <h3 class="md-title">{{classDate}}</h3>
                 </div>
                 <div class="details-row">
-                    <p class="md-body-2">Attendance</p>                   
+                    <p class="md-body-2">Відвідування</p>
                     <md-radio-group ng-model="status" layout="row">
                         <md-radio-button value="present" aria-label="present" flex>
                             <md-icon class="md-48 green-700">check_box</md-icon>
@@ -34,7 +34,7 @@
                         </md-radio-button>
                         <md-radio-button value="absent" aria-label="absent" flex>
                             <md-icon class="md-48 red-700">indeterminate_check_box</md-icon>
-                        </md-radio-button>                      
+                        </md-radio-button>
                     </md-radio-group>
                 </div>
             </div>
@@ -43,12 +43,12 @@
             <md-progress-linear flex ng-if="dataLoading" class="md-accent" md-mode="indeterminate"></md-progress-linear>
             <div layout="row" layout-align="end">
                 <md-button type="submit" class="md-primary">
-                    Update
+                    Оновити
                 </md-button>
                 <md-button type="button" ng-click="cancel()" class="md-primary">
-                    Cancel
+                    Відміна
                 </md-button>
-            </div>     
-        </div>   
+            </div>
+        </div>
     </form>
 </md-dialog>

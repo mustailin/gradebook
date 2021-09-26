@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <html lang="en" ng-app="GradebookApp">
 
 <head>
-    <title>GradeBook</title>
+    <title>Журнал успішності</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
@@ -40,7 +40,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <!-- Sidenav -->
     <md-sidenav ng-hide="isLogin" class="site-sidenav md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" tabindex="-1" ng-cloak>
         <header class="nav-header">
-            <img src="images/logo.png" alt>
+            <a href="/"><img src="images/logo.png" alt></a>
             <span class="nav-header-title">Національний технічний університет України "Київський політехнічний інститут імені Ігоря Сікорського"</span>
         </header>
         <md-content flex>
@@ -51,7 +51,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
             <md-button class="add-button" ng-click="showAddGradebookDialog($event)" ng-hide="isHidden">
                 <md-icon class="add-icon">add_circle</md-icon>
-                <span>Add Gradebook</span>
+                <span>Додати журнал</span>
             </md-button>
             <div class="menu-static-row" style="padding-top: 10px;">
                 <span class="md-title">{{menuTitle}}</span>
@@ -100,17 +100,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     <v-pane>
                         <v-pane-header>
                             <md-button class="menu-title-button">
-                                <span>Departments</span>
+                                <span>Департаменти</span>
                                 <md-icon></md-icon>
                             </md-button>
                         </v-pane-header>
                         <md-divider></md-divider>
                         <v-pane-content>
                             <md-button class="menu-subtitle-button" href="#/faculties" ng-click="closeSidenav('left')">
-                                <span>Faculties</span>
+                                <span>Факультети</span>
                             </md-button>
                             <md-button class="menu-subtitle-button" href="#/departments" ng-click="closeSidenav('left')">
-                                <span>Departments</span>
+                                <span>Кафедри</span>
                             </md-button>
                             <md-divider></md-divider>
                         </v-pane-content>
@@ -118,20 +118,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     <v-pane>
                         <v-pane-header>
                             <md-button class="menu-title-button">
-                                <span>Users</span>
+                                <span>Користувачі</span>
                                 <md-icon></md-icon>
                             </md-button>
                         </v-pane-header>
                         <md-divider></md-divider>
                         <v-pane-content>
                             <md-button class="menu-subtitle-button" href="#/students" ng-click="closeSidenav('left')">
-                                <span>Students</span>
+                                <span>Студенти</span>
                             </md-button>
                             <md-button class="menu-subtitle-button" href="#/lecturers" ng-click="closeSidenav('left')">
-                                <span>Lecturers</span>
+                                <span>Викладачі</span>
                             </md-button>
                             <md-button class="menu-subtitle-button" href="#/administrators" ng-click="closeSidenav('left')">
-                                <span>Administrators</span>
+                                <span>Адміністратори</span>
                             </md-button>
                             <md-divider></md-divider>
                         </v-pane-content>
@@ -139,22 +139,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 </v-accordion>
 
                 <md-button class="menu-button accent" href="#/groups" ng-click="closeSidenav('left')">
-                    <span>Groups</span>
+                    <span>Групи</span>
                 </md-button>
                 <md-button class="menu-button accent" href="#/semesters" ng-click="closeSidenav('left')">
-                    <span>Semesters</span>
+                    <span>Семестри</span>
                 </md-button>
                 <md-button class="menu-button accent" href="#/gradebooks" ng-click="closeSidenav('left')">
-                    <span>Gradebooks</span>
+                    <span>Журнали</span>
                 </md-button>
                 <md-button class="menu-button accent" href="#/tasks" ng-click="closeSidenav('left')">
-                    <span>Tasks</span>
+                    <span>Види завдань</span>
                 </md-button>
             </section>
 
             <md-button class="menu-button" ng-click="logout()">
                 <md-icon class="icon">exit_to_app</md-icon>
-                <span>Log out</span>
+                <span>Вихід</span>
             </md-button>
         </md-content>
     </md-sidenav>
@@ -168,7 +168,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     <md-icon>menu</md-icon>
                 </md-button>
                 <div flex layout="row" layout-align="center center">
-                    <a class="title" href="#/">GradeBook™</a>
+                    <a class="title" href="#/">Журнал успішності</a>
                     <span hide-sm hide-md flex></span>
                     <span class="gradebook-title" hide-sm>{{gradebook.group}} {{gradebook.subject}} {{gradebook.year}} {{gradebook.semester}}</span>
                 </div>

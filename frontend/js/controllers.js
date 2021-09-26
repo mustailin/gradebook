@@ -378,8 +378,8 @@ controllers.controller('GradebookTasksCtrl', function($scope, $rootScope, $state
 controllers.controller('AddTaskDialogController', function($scope, $mdDialog,
     $rootScope, MessageService, Gradebook, Task, gradebookId) {
 
-    $scope.mode = 'Add';
-    $scope.submitButton = 'Submit';
+    $scope.mode = 'Додати';
+    $scope.submitButton = 'Підтвердити';
 
     $scope.userRole = $rootScope.globals.currentUser.userRole;
 
@@ -482,8 +482,8 @@ controllers.controller('TaskDetailsDialogController', function($scope, $rootScop
 controllers.controller('EditTaskDialogController', function($scope, $mdDialog,
     MessageService, task, Task) {
 
-    $scope.mode = 'Edit';
-    $scope.submitButton = 'Update';
+    $scope.mode = 'Редагувати';
+    $scope.submitButton = 'Оновити';
 
     $scope.task = task;
     var startDate = new Date(task.startDate);
@@ -685,14 +685,14 @@ controllers.controller('FacultyCtrl', function($scope, $mdDialog, $state, Messag
     $scope.faculties = Faculty.query();
 
     $scope.isDeletionEnabled = false;
-    $scope.status = "disabled";
+    $scope.status = "вимкнено";
 
 
     $scope.onChange = function(isDeletionEnabled) {
         if (isDeletionEnabled) {
-            $scope.status = "enabled";
+            $scope.status = "увімкнено";
         } else {
-            $scope.status = "disabled";
+            $scope.status = "вимкнено";
         }
 
     };
@@ -826,14 +826,14 @@ controllers.controller('DepartmentCtrl', function($scope, $mdDialog, $state, Mes
     $scope.departments = Department.query();
 
     $scope.isDeletionEnabled = false;
-    $scope.status = "disabled";
+    $scope.status = "вимкнено";
 
 
     $scope.onChange = function(isDeletionEnabled) {
         if (isDeletionEnabled) {
-            $scope.status = "enabled";
+            $scope.status = "увімкнено";
         } else {
-            $scope.status = "disabled";
+            $scope.status = "вимкнено";
         }
 
     };
@@ -984,7 +984,7 @@ controllers.controller('SemesterCtrl', function($scope, $mdDialog, $state, Messa
     $scope.semesters = Semester.query();
 
     $scope.isDeletionEnabled = false;
-    $scope.status = "disabled";
+    $scope.status = "вимкнено";
 
     $scope.isExpanded = false;
 
@@ -998,9 +998,9 @@ controllers.controller('SemesterCtrl', function($scope, $mdDialog, $state, Messa
 
     $scope.onChange = function(isDeletionEnabled) {
         if (isDeletionEnabled) {
-            $scope.status = "enabled";
+            $scope.status = "увімкнено";
         } else {
-            $scope.status = "disabled";
+            $scope.status = "вимкнено";
         }
 
     };
@@ -1134,7 +1134,7 @@ controllers.controller('LecturerCtrl', function($scope, $mdDialog, $state, Messa
     $scope.lecturers = Lecturer.query();
 
     $scope.isDeletionEnabled = false;
-    $scope.status = "disabled";
+    $scope.status = "вимкнено";
 
     $scope.isExpanded = false;
 
@@ -1145,9 +1145,9 @@ controllers.controller('LecturerCtrl', function($scope, $mdDialog, $state, Messa
 
     $scope.onChange = function(isDeletionEnabled) {
         if (isDeletionEnabled) {
-            $scope.status = "enabled";
+            $scope.status = "увімкнено";
         } else {
-            $scope.status = "disabled";
+            $scope.status = "вимкнено";
         }
 
     };
@@ -1298,7 +1298,7 @@ controllers.controller('StudentCtrl', function($scope, $mdDialog, $state, Messag
     $scope.students = Student.query();
 
     $scope.isDeletionEnabled = false;
-    $scope.status = "disabled";
+    $scope.status = "вимкнено";
 
     $scope.isExpanded = false;
 
@@ -1309,9 +1309,9 @@ controllers.controller('StudentCtrl', function($scope, $mdDialog, $state, Messag
 
     $scope.onChange = function(isDeletionEnabled) {
         if (isDeletionEnabled) {
-            $scope.status = "enabled";
+            $scope.status = "увімкнено";
         } else {
-            $scope.status = "disabled";
+            $scope.status = "вимкнено";
         }
     };
 
@@ -1460,7 +1460,7 @@ controllers.controller('AdministratorCtrl', function($scope, $mdDialog, $state, 
     $scope.administrators = Administrator.query();
 
     $scope.isDeletionEnabled = false;
-    $scope.status = "disabled";
+    $scope.status = "вимкнено";
 
     $scope.isExpanded = false;
 
@@ -1471,9 +1471,9 @@ controllers.controller('AdministratorCtrl', function($scope, $mdDialog, $state, 
 
     $scope.onChange = function(isDeletionEnabled) {
         if (isDeletionEnabled) {
-            $scope.status = "enabled";
+            $scope.status = "увімкнено";
         } else {
-            $scope.status = "disabled";
+            $scope.status = "вимкнено";
         }
     };
 
@@ -1604,7 +1604,7 @@ controllers.controller('GroupCtrl', function($scope, $mdDialog, $state, MessageS
     $scope.groups = Group.query();
 
     $scope.isDeletionEnabled = false;
-    $scope.status = "disabled";
+    $scope.status = "вимкнено";
 
     $scope.isExpanded = false;
 
@@ -1615,9 +1615,9 @@ controllers.controller('GroupCtrl', function($scope, $mdDialog, $state, MessageS
 
     $scope.onChange = function(isDeletionEnabled) {
         if (isDeletionEnabled) {
-            $scope.status = "enabled";
+            $scope.status = "увімкнено";
         } else {
-            $scope.status = "disabled";
+            $scope.status = "вимкнено";
         }
 
     };
@@ -1768,7 +1768,7 @@ controllers.controller('GradebookCtrl', function($scope, $mdDialog, $state, Mess
     $scope.gradebooks = Gradebook.query();
 
     $scope.isDeletionEnabled = false;
-    $scope.status = "disabled";
+    $scope.status = "вимкнено";
 
     $scope.isExpanded = false;
 
@@ -1779,9 +1779,9 @@ controllers.controller('GradebookCtrl', function($scope, $mdDialog, $state, Mess
 
     $scope.onChange = function(isDeletionEnabled) {
         if (isDeletionEnabled) {
-            $scope.status = "enabled";
+            $scope.status = "увімкнено";
         } else {
-            $scope.status = "disabled";
+            $scope.status = "вимкнено";
         }
     };
 
@@ -1983,7 +1983,7 @@ controllers.controller('TaskCtrl', function($scope, $mdDialog, $state, MessageSe
     $scope.tasks = Task.query();
 
     $scope.isDeletionEnabled = false;
-    $scope.status = "disabled";
+    $scope.status = "вимкнено";
 
     $scope.isExpanded = false;
 
@@ -1994,9 +1994,9 @@ controllers.controller('TaskCtrl', function($scope, $mdDialog, $state, MessageSe
 
     $scope.onChange = function(isDeletionEnabled) {
         if (isDeletionEnabled) {
-            $scope.status = "enabled";
+            $scope.status = "увімкнено";
         } else {
-            $scope.status = "disabled";
+            $scope.status = "вимкнено";
         }
     };
 

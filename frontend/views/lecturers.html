@@ -6,38 +6,38 @@
             <div class="filters-header" layout="row" layout-align="start center">
                 <div ng-click="toggleFilters()" layout="row" layout-align="start center">
                     <md-icon>filter_list</md-icon>
-                    <p class="md-body-2">Filters</p>
+                    <p class="md-body-2">Фільтри</p>
                 </div>
                 <div flex></div>
-                <p class="md-body-2">Danger Zone!</p>
+                <p class="md-body-2">Небезпечна зона!</p>
                 <md-switch ng-model="isDeletionEnabled" aria-label="Deletion Switch" ng-change="onChange(isDeletionEnabled)" class="md-warn">
-                    Deletion is {{status}}
+                    Видалення {{status}}
                 </md-switch>
             </div>
             <div class="filters" ng-show="isExpanded">
                 <div layout="row" layout-padding>
                     <md-input-container class="number-filter" flex>
-                        <label>By Id</label>
+                        <label>ПоId</label>
                         <input type="text" ng-model="search.lecturerId">
                     </md-input-container>
                     <md-input-container class="text-filter" flex>
-                        <label>By Faculty</label>
+                        <label>За факультетом</label>
                         <input type="text" ng-model="search.department.faculty.name">
                     </md-input-container>
                     <md-input-container class="text-filter" flex>
-                        <label>By Department</label>
+                        <label>За кафедрою</label>
                         <input type="text" ng-model="search.department.name">
                     </md-input-container>
                     <md-input-container class="text-filter" flex>
-                        <label>By First Name</label>
+                        <label>за ім'ям</label>
                         <input type="text" ng-model="search.firstName">
                     </md-input-container>
                     <md-input-container class="text-filter" flex>
-                        <label>By Last Name</label>
+                        <label>за прізвищем</label>
                         <input type="text" ng-model="search.lastName">
                     </md-input-container>
                     <md-input-container class="text-filter" flex>
-                        <label>By Email</label>
+                        <label>По Email</label>
                         <input type="text" ng-model="search.email">
                     </md-input-container>
                 </div>
@@ -46,10 +46,10 @@
         <thead>
             <tr class="header-primary admin">
                 <th class="table-num-col">Id</th>
-                <th>Faculty</th>
-                <th>Department</th>
-                <th>First Name</th>
-                <th>Last Name</th>
+                <th>Факультет</th>
+                <th>Кафедра</th>
+                <th>Ім'я</th>
+                <th>Прізвище</th>
                 <th>Email</th>
                 <th colspan="2">Controls</th>
             </tr>
@@ -66,13 +66,13 @@
                 <td class="controls-col">
                     <md-button class="control" ng-click="showEditLecturerForm($event, lecturer)">
                         <md-icon>edit</md-icon>
-                        <span>Edit</span>
+                        <span>Редагувати</span>
                     </md-button>
                 </td>
                 <td class="controls-col">
                     <md-button class="control" ng-click="showDeleteLecturerDialog($event, lecturer)" ng-disabled="!isDeletionEnabled">
                         <md-icon>delete</md-icon>
-                        <span>Delete</span>
+                        <span>Видалити</span>
                     </md-button>
                 </td>
             </tr>
@@ -86,7 +86,7 @@
                 <td colspan="2" class="controls-col">
                     <md-button class="control" ng-click="showAddLecturerForm($event)">
                         <md-icon>add_circle</md-icon>
-                        <span>Add</span>
+                        <span>Додати</span>
                     </md-button>
                 </td>
             </tr>

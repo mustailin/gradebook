@@ -1,43 +1,43 @@
 <div class="main-frame" flex>
 
-    <h1 class="md-headline admin-table-title">Gradebooks</h1>
+    <h1 class="md-headline admin-table-title">Журнал</h1>
     <table class="table admin">
         <caption>
             <div class="filters-header" layout="row" layout-align="start center">
                 <div ng-click="toggleFilters()" layout="row" layout-align="start center">
                     <md-icon>filter_list</md-icon>
-                    <p class="md-body-2">Filters</p>
+                    <p class="md-body-2">Фільтри</p>
                 </div>
                 <div flex></div>
-                <p class="md-body-2">Danger Zone!</p>
+                <p class="md-body-2">Небезпечна зона!</p>
                 <md-switch ng-model="isDeletionEnabled" aria-label="Deletion Switch" ng-change="onChange(isDeletionEnabled)" class="md-warn">
-                    Deletion is {{status}}
+                    Видалення {{status}}
                 </md-switch>
             </div>
             <div class="filters" ng-show="isExpanded">
                 <div layout="row" layout-padding>
                     <md-input-container class="number-filter" flex>
-                        <label>By Id</label>
+                        <label>По Id</label>
                         <input type="text" ng-model="search.gradebookId">
                     </md-input-container>
                     <md-input-container class="text-filter" flex>
-                        <label>By Subject</label>
+                        <label>По предмету</label>
                         <input type="text" ng-model="search.subject">
                     </md-input-container>
                     <md-input-container class="number-filter" flex>
-                        <label>By Year</label>
+                        <label>за роком</label>
                         <input type="text" ng-model="search.semester.academicYear">
                     </md-input-container>
                     <md-input-container class="text-filter" flex>
-                        <label>By Semester Name</label>
+                        <label>за назвою семестру</label>
                         <input type="text" ng-model="search.semester.name">
                     </md-input-container>
                     <md-input-container class="number-filter" flex>
-                        <label>By Group</label>
+                        <label>за групою</label>
                         <input type="text" ng-model="search.group.number">
                     </md-input-container>
                     <md-input-container class="text-filter" flex>
-                        <label>By Faculty</label>
+                        <label>за факультетом</label>
                         <input type="text" ng-model="search.group.faculty.name">
                     </md-input-container>
                 </div>
@@ -46,10 +46,10 @@
         <thead>
             <tr class="header-primary admin">
                 <th class="table-num-col">Id</th>
-                <th>Subject</th>
-                <th>Semester</th>
-                <th>Group</th>
-                <th>Faculty</th>
+                <th>Предмет</th>
+                <th>Семестр</th>
+                <th>Група</th>
+                <th>Факультет</th>
                 <th colspan="2">Controls</th>
             </tr>
         </thead>
@@ -64,13 +64,13 @@
                 <td class="controls-col">
                     <md-button class="control" ng-click="showEditGradebookForm($event, gradebook)">
                         <md-icon>edit</md-icon>
-                        <span>Edit</span>
+                        <span>Редагувати</span>
                     </md-button>
                 </td>
                 <td class="controls-col">
                     <md-button class="control" ng-click="showDeleteGradebookDialog($event, gradebook)" ng-disabled="!isDeletionEnabled">
                         <md-icon>delete</md-icon>
-                        <span>Delete</span>
+                        <span>Видалити</span>
                     </md-button>
                 </td>
             </tr>
@@ -83,7 +83,7 @@
                 <td colspan="2" class="controls-col">
                     <md-button class="control" ng-click="showAddGradebookForm($event)">
                         <md-icon>add_circle</md-icon>
-                        <span>Add</span>
+                        <span>Додати</span>
                     </md-button>
                 </td>
             </tr>

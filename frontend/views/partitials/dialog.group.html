@@ -2,7 +2,7 @@
     <form name="groupForm" ng-submit="submit()" novalidate>
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2>{{mode}} Group</h2>
+                <h2>{{mode}} Група</h2>
                 <span flex></span>
                 <md-button type="button" class="md-icon-button" ng-click="cancel()">
                     <md-icon>close</md-icon>
@@ -22,7 +22,7 @@
                     </div>
                 </md-input-container>
                 <md-input-container>
-                    <label>Group Number</label>
+                    <label>Номер Групи</label>
                     <input name="number" md-maxlength="45" required type="text" ng-model="group.number">
                     <div ng-messages="groupForm.number.$error" ng-if="groupForm.$submitted">
                         <div ng-message="required">Group number is required.</div>
@@ -38,7 +38,7 @@
                     {{submitButton}}
                 </md-button>
                 <md-button type="button" ng-click="cancel()" class="md-primary">
-                    Cancel
+                    Відміна
                 </md-button>
             </div>
         </div>

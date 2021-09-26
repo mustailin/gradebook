@@ -8,14 +8,14 @@
             <form name="loginForm" ng-submit="login()" novalidate>
                 <md-card-content layout="column">
                     <md-input-container>
-                        <label>Username</label>
+                        <label>Email</label>
                         <input required name="username" type="email" ng-model="username">
                         <div ng-messages="loginForm.username.$error" ng-if="loginForm.$submitted">
                             <div ng-message="required">Username is required.</div>
                         </div>
                     </md-input-container>
                     <md-input-container>
-                        <label>Password</label>
+                        <label>Пароль</label>
                         <input required name="password" type="password" ng-model="password">
                         <div ng-messages="loginForm.password.$error" ng-if="loginForm.$submitted">
                             <div ng-message="required">Password is required.</div>

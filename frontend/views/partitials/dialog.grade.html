@@ -2,7 +2,7 @@
     <form name="gradeForm" ng-submit="update()" novalidate>
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2>Update Grade</h2>
+                <h2>Оновити бали</h2>
                 <span flex></span>
                 <md-button type="button" class="md-icon-button" ng-click="cancel()">
                     <md-icon>close</md-icon>
@@ -20,12 +20,12 @@
                     <h3 class="md-title">{{task.title}}</h3>
                 </div>
                 <md-input-container>
-                    <label>Grade</label>
+                    <label>Бал</label>
                     <input name="grade" required type="number" ng-model="studentGrade.grade" min="0" max="{{task.maxGrade}}">
                     <div ng-messages="gradeForm.grade.$error" ng-if="gradeForm.$submitted">
-                            <div ng-message="min">Value must be greater than or equal to 0.</div> 
-                            <div ng-message="max">Value must be less than or equal to {{task.maxGrade}}.</div> 
-                        </div>
+                        <div ng-message="min">Value must be greater than or equal to 0.</div>
+                        <div ng-message="max">Value must be less than or equal to {{task.maxGrade}}.</div>
+                    </div>
                 </md-input-container>
             </div>
         </md-dialog-content>
@@ -33,12 +33,12 @@
             <md-progress-linear flex ng-if="dataLoading" class="md-accent" md-mode="indeterminate"></md-progress-linear>
             <div layout="row" layout-align="end">
                 <md-button type="submit" class="md-primary">
-                    Update
+                    Оновити
                 </md-button>
                 <md-button type="button" ng-click="cancel()" class="md-primary">
-                    Cancel
+                    Відміна
                 </md-button>
-            </div>     
-        </div>   
+            </div>
+        </div>
     </form>
 </md-dialog>

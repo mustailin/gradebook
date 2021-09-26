@@ -2,7 +2,7 @@
     <form name="lecturerForm" ng-submit="submit()" novalidate>
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2>{{mode}} Lecturer</h2>
+                <h2>{{mode}} Викладачі</h2>
                 <span flex></span>
                 <md-button type="button" class="md-icon-button" ng-click="cancel()">
                     <md-icon>close</md-icon>
@@ -12,7 +12,7 @@
         <md-dialog-content>
             <div layout="column">
                 <md-input-container>
-                    <md-select name="department" ng-model="lecturer.departmentId" placeholder="Department" required>
+                    <md-select name="department" ng-model="lecturer.department" placeholder="Department" required>
                         <md-option ng-value="department" ng-repeat="department in departments" selected="{{ department.name === lecturer.department.name ? 'selected' : '' }}">
                             {{department.name}}</md-option>
                     </md-select>
@@ -21,7 +21,7 @@
                     </div>
                 </md-input-container>
                 <md-input-container>
-                    <label>First Name</label>
+                    <label>Ім'я</label>
                     <input name="firstName" md-maxlength="45" required type="text" ng-model="lecturer.firstName">
                     <div ng-messages="lecturerForm.firstName.$error" ng-if="lecturerForm.$submitted">
                         <div ng-message="required">First name is required.</div>
@@ -29,7 +29,7 @@
                     </div>
                 </md-input-container>
                 <md-input-container>
-                    <label>Last Name</label>
+                    <label>Призвіще</label>
                     <input name="lastName" md-maxlength="45" required type="text" ng-model="lecturer.lastName">
                     <div ng-messages="lecturerForm.lastName.$error" ng-if="lecturerForm.$submitted">
                         <div ng-message="required">Last name is required.</div>
@@ -45,7 +45,7 @@
                     </div>
                 </md-input-container>
                 <md-input-container>
-                    <label>Password</label>
+                    <label>Пароль</label>
                     <input name="password" md-maxlength="16" required type="text" ng-model="lecturer.password">
                     <div ng-messages="lecturerForm.password.$error" ng-if="lecturerForm.$submitted">
                         <div ng-message="required">Password is required.</div>
@@ -61,7 +61,7 @@
                     {{submitButton}}
                 </md-button>
                 <md-button type="button" ng-click="cancel()" class="md-primary">
-                    Cancel
+                    Відміна
                 </md-button>
             </div>
         </div>

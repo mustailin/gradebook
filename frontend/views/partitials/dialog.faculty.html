@@ -2,7 +2,7 @@
     <form name="facultyForm" ng-submit="submit()" novalidate>
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2>{{mode}} Faculty</h2>
+                <h2>{{mode}} Факультет</h2>
                 <span flex></span>
                 <md-button type="button" class="md-icon-button" ng-click="cancel()">
                     <md-icon>close</md-icon>
@@ -12,7 +12,7 @@
         <md-dialog-content>
             <div layout="column">
                 <md-input-container>
-                    <label>Faculty Name</label>
+                    <label>Назва Факультету</label>
                     <input name="name" md-maxlength="150" required type="text" ng-model="faculty.name">
                     <div ng-messages="facultyForm.name.$error" ng-if="facultyForm.$submitted">
                         <div ng-message="required">Faculty name is required.</div>
@@ -28,9 +28,9 @@
                     {{submitButton}}
                 </md-button>
                 <md-button type="button" ng-click="cancel()" class="md-primary">
-                    Cancel
+                    Відміна
                 </md-button>
-            </div>     
-        </div>   
+            </div>
+        </div>
     </form>
 </md-dialog>

@@ -29,14 +29,48 @@ namespace GradeBookService.Controllers
                 .ToListAsync());
         }
 
-        [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetAsync(int id)
+        [HttpGet("{id:int}", Name = nameof(GetLecturerAsync))]
+        public async Task<IActionResult> GetLecturerAsync(int id)
         {
             return Ok(await _dbContext.Lecturers
                 .Include(l => l.Department)
                 .Include(l => l.Department.Faculty)
                 .Include(l => l.LecturerHasGradebooks)
                 .FirstOrDefaultAsync(l => l.Id == id));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateAsync([FromBody] LecturerViewModel lecturerToCreate)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var lecturer = new Lecturer
+            {
+                FirstName = lecturerToCreate.FirstName,
+                LastName = lecturerToCreate.LastName,
+                Email = lecturerToCreate.Email,
+                DepartmentId = lecturerToCreate.Department.Id,
+                Role = "lecturer"
+            };
+
+            _dbContext.Lecturers.Add(lecturer);
+
+            var user = new User
+            {
+                Email = lecturer.Email,
+                IsAccountNonExpired = true,
+                IsAccountNonLocked = true,
+                IsCredentialsNonExpired = true,
+                IsEnabled = true,
+                Password = Hasher.PBKDF2Hash(lecturerToCreate.Password)
+            };
+
+            _dbContext.Users.Add(user);
+
+            await _dbContext.SaveChangesAsync();
+
+            return CreatedAtRoute(nameof(GetLecturerAsync), routeValues: new { id = lecturer.Id }, value: lecturer);
         }
 
         [HttpPut("{id:int}")]

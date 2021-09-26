@@ -2,7 +2,7 @@
     <form name="studentForm" ng-submit="submit()" novalidate>
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2>{{mode}} Student</h2>
+                <h2>{{mode}} Студента</h2>
                 <span flex></span>
                 <md-button type="button" class="md-icon-button" ng-click="cancel()">
                     <md-icon>close</md-icon>
@@ -12,7 +12,7 @@
         <md-dialog-content>
             <div layout="column">
                 <md-input-container>
-                    <md-select name="group" ng-model="student.groupId" placeholder="Group" required>
+                    <md-select name="group" ng-model="student.group" placeholder="Group" required>
                         <md-option ng-value="group" ng-repeat="group in groups" selected="{{ group.number === student.group.number ? 'selected' : '' }}">
                             {{group.number}}</md-option>
                     </md-select>
@@ -21,7 +21,7 @@
                     </div>
                 </md-input-container>
                 <md-input-container>
-                    <label>First Name</label>
+                    <label>Ім'я</label>
                     <input name="firstName" md-maxlength="45" required type="text" ng-model="student.firstName">
                     <div ng-messages="studentForm.firstName.$error" ng-if="studentForm.$submitted">
                         <div ng-message="required">First name is required.</div>
@@ -29,7 +29,7 @@
                     </div>
                 </md-input-container>
                 <md-input-container>
-                    <label>Last Name</label>
+                    <label>Призвіще</label>
                     <input name="lastName" md-maxlength="45" required type="text" ng-model="student.lastName">
                     <div ng-messages="studentForm.lastName.$error" ng-if="studentForm.$submitted">
                         <div ng-message="required">Last name is required.</div>
@@ -45,7 +45,7 @@
                     </div>
                 </md-input-container>
                 <md-input-container>
-                    <label>Password</label>
+                    <label>Пароль</label>
                     <input name="password" md-maxlength="16" required type="text" ng-model="student.password">
                     <div ng-messages="studentForm.password.$error" ng-if="studentForm.$submitted">
                         <div ng-message="required">Password is required.</div>
@@ -61,7 +61,7 @@
                     {{submitButton}}
                 </md-button>
                 <md-button type="button" ng-click="cancel()" class="md-primary">
-                    Cancel
+                    Відміна
                 </md-button>
             </div>
         </div>

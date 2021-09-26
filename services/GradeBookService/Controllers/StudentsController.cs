@@ -26,11 +26,45 @@ namespace GradeBookService.Controllers
                 .ToListAsync());
         }
 
-        [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetAsync(int id)
+        [HttpGet("{id:int}", Name = nameof(GetStudentAsync))]
+        public async Task<IActionResult> GetStudentAsync(int id)
         {
             return Ok(await _dbContext.Students
                 .FirstOrDefaultAsync(s => s.Id == id));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateAsync([FromBody] StudentViewModel studentToCreate)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var student = new Student
+            {
+                FirstName = studentToCreate.FirstName,
+                LastName = studentToCreate.LastName,
+                Email = studentToCreate.Email,
+                GroupId = studentToCreate.Group.Id,
+                Role = "student"
+            };
+
+            _dbContext.Students.Add(student);
+
+            var user = new User
+            {
+                Email = student.Email,
+                IsAccountNonExpired = true,
+                IsAccountNonLocked = true,
+                IsCredentialsNonExpired = true,
+                IsEnabled = true,
+                Password = Hasher.PBKDF2Hash(studentToCreate.Password)
+            };
+
+            _dbContext.Users.Add(user);
+
+            await _dbContext.SaveChangesAsync();
+
+            return CreatedAtRoute(nameof(GetStudentAsync), routeValues: new { id = student.Id }, value: student);
         }
 
         [HttpPut("{id:int}")]

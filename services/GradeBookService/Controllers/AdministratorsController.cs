@@ -24,10 +24,43 @@ namespace GradeBookService.Controllers
             return Ok(await _dbContext.Admins.ToListAsync());
         }
 
-        [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetAsync(int id)
+        [HttpGet("{id:int}", Name = nameof(GetAdminAsync))]
+        public async Task<IActionResult> GetAdminAsync(int id)
         {
             return Ok(await _dbContext.Admins.FirstOrDefaultAsync(a => a.Id == id));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateAsync([FromBody] AdminViewModel adminToCreate)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var admin = new Admin
+            {
+                FirstName = adminToCreate.FirstName,
+                LastName = adminToCreate.LastName,
+                Email = adminToCreate.Email,
+                Role = "admin"
+            };
+
+            _dbContext.Admins.Add(admin);
+
+            var user = new User
+            {
+                Email = admin.Email,
+                IsAccountNonExpired = true,
+                IsAccountNonLocked = true,
+                IsCredentialsNonExpired = true,
+                IsEnabled = true,
+                Password = Hasher.PBKDF2Hash(adminToCreate.Password)
+            };
+
+            _dbContext.Users.Add(user);
+
+            await _dbContext.SaveChangesAsync();
+
+            return CreatedAtRoute(nameof(GetAdminAsync), routeValues: new { id = admin.Id }, value: admin);
         }
 
         [HttpPut("{id:int}")]

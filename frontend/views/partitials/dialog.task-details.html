@@ -1,7 +1,7 @@
 <md-dialog class="dialog" aria-label="Task Details">
     <md-toolbar>
         <div class="md-toolbar-tools">
-            <h2>Task Details</h2>
+            <h2>Деталі завдання</h2>
             <span flex></span>
             <md-button class="md-icon-button" ng-click="cancel()">
                 <md-icon>close</md-icon>
@@ -11,48 +11,48 @@
     <md-dialog-content>
         <div layout="column">
             <div class="details-row">
-                <p class="md-body-2">Task title</p>
+                <p class="md-body-2">Вид завдання</p>
                 <h1 class="md-headline">{{task.title}}</h1>
             </div>
             <div layout="row" class="details-row">
                 <div flex>
-                    <p class="md-body-2">Start date</p>
+                    <p class="md-body-2">Початок</p>
                     <p class="md-body-1">{{startDate}}</p>
                 </div>
                 <div flex>
-                    <p class="md-body-2">Finish date</p>
+                    <p class="md-body-2">Кінець</p>
                     <p class="md-body-1">{{endDate}}</p>
                 </div>
                 <div flex>
-                    <p class="md-body-2">Task length</p>
-                    <p class="md-body-1">{{task.taskLength}} Weeks</p>
+                    <p class="md-body-2">Тривалість</p>
+                    <p class="md-body-1">{{task.taskLength}} Тиждень</p>
                 </div>
             </div>
             <div layout="row" class="details-row">
                 <div flex>
-                    <p class="md-body-2">On course days</p>
+                    <p class="md-body-2">Дні викладання</p>
                     <div layout="row">
                         <p class="md-body-1" ng-repeat="day in onCourseDays">{{day}}</p>
                     </div>
                 </div>
                 <div flex>
-                    <p class="md-body-2">Maximum grade</p>                   
-                    <p class="md-body-1">{{task.maxGrade}}</p>    
+                    <p class="md-body-2">Максимальний бал</p>
+                    <p class="md-body-1">{{task.maxGrade}}</p>
                 </div>
             </div>
             <div class="details-row">
-                <p class="md-body-2">Description</p>
+                <p class="md-body-2">Опис</p>
                 <p class="md-body-1">{{task.description}}</p>
             </div>
         </div>
     </md-dialog-content>
-    <div class="md-actions" layout="row">            
+    <div class="md-actions" layout="row">
         <div flex></div>
         <md-button ng-click="showEditTaskForm($event)" class="md-primary" ng-hide="isHidden">
-            Edit
+            Редагувати
         </md-button>
         <md-button ng-click="hide()" class="md-primary">
-            Close
-        </md-button>      
-    </div>   
+            Закрити
+        </md-button>
+    </div>
 </md-dialog>

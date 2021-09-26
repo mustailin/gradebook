@@ -12,7 +12,7 @@
         <md-dialog-content>
             <div layout="column">
                 <md-input-container>
-                    <label>Subject</label>
+                    <label>Предмет</label>
                     <input name="subject" md-maxlength="150" type="text" ng-model="gradebook.subject" required>
                     <div ng-messages="gradebookForm.subject.$error" ng-if="gradebookForm.$submitted">
                         <div ng-message="required">Subject is required.</div>
@@ -68,7 +68,7 @@
                     </md-chips>
                 </div>
                 <md-input-container>
-                    <label>Description</label>
+                    <label>Опис</label>
                     <textarea ng-model="gradebook.description"></textarea>
                 </md-input-container>
             </div>
@@ -80,7 +80,7 @@
                     {{submitButton}}
                 </md-button>
                 <md-button type="button" ng-click="cancel()" class="md-primary">
-                    Cancel
+                    Відміна
                 </md-button>
             </div>
         </div>

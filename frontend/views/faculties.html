@@ -1,20 +1,20 @@
 <div class="main-frame" flex>
-    
-    <h1 class="md-headline admin-table-title">Faculties</h1>    
+
+    <h1 class="md-headline admin-table-title">Факультети</h1>
     <table class="table admin">
-        <caption>               
+        <caption>
             <div layout="row" layout-align="end center">
-                <p class="md-body-2">Danger Zone!</p>
+                <p class="md-body-2">Небезпечна зона!</p>
                 <md-switch ng-model="isDeletionEnabled" aria-label="Deletion Switch" ng-change="onChange(isDeletionEnabled)" class="md-warn">
-                    Deletion is {{status}}
+                    Видалення {{status}}
                 </md-switch>
-            </div>       
-        </caption>      
-        <thead>         
+            </div>
+        </caption>
+        <thead>
             <tr class="header-primary admin">
                 <th class="table-num-col">Id</th>
-                <th>Name</th>                                                                     
-                <th colspan="2">Controls</th>                     
+                <th>Назва</th>
+                <th colspan="2">Controls</th>
             </tr>
         </thead>
 
@@ -25,16 +25,15 @@
                 <td class="controls-col">
                     <md-button class="control" ng-click="showEditFacultyForm($event, faculty)">
                         <md-icon>edit</md-icon>
-                        <span>Edit</span>
+                        <span>Редагувати</span>
                     </md-button>
                 </td>
                 <td class="controls-col">
-                    <md-button class="control" ng-click="showDeleteFacultyDialog($event, faculty)" 
-                               ng-disabled="!isDeletionEnabled">
+                    <md-button class="control" ng-click="showDeleteFacultyDialog($event, faculty)" ng-disabled="!isDeletionEnabled">
                         <md-icon>delete</md-icon>
-                        <span>Delete</span>
+                        <span>Видалити</span>
                     </md-button>
-                    
+
                 </td>
             </tr>
             <tr>
@@ -43,7 +42,7 @@
                 <td colspan="2" class="controls-col">
                     <md-button class="control" ng-click="showAddFacultyForm($event)">
                         <md-icon>add_circle</md-icon>
-                        <span>Add</span>
+                        <span>Додати</span>
                     </md-button>
                 </td>
             </tr>

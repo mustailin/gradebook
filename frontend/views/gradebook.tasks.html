@@ -3,7 +3,7 @@
         <thead>
             <tr class="header-primary">
                 <th class="table-num-col">#</th>
-                <th class="table-name-col">Name</th>                                                                     
+                <th class="table-name-col">Назва</th>
                 <th ng-repeat="task in groupGrades| groupBy: 'taskId' track by $index" ng-click="showTaskDetails($event, task[0].taskId)">
                     <a>Task {{($index + 1)}} | {{task[0].title}}</a>
                 </th>
@@ -12,15 +12,15 @@
                         <md-tooltip>
                             Add task
                         </md-tooltip>
-                        <md-icon class="add-button">add_circle_outline</md-icon>            
+                        <md-icon class="add-button">add_circle_outline</md-icon>
                     </md-button>
-                </th>                               
+                </th>
             </tr>
             <tr class="header-secondary">
                 <th class="table-num-col"></th>
                 <th class="table-name-col"></th>
                 <th ng-repeat="task in groupGrades| groupBy: 'taskId' track by $index">{{calcTaskDates(task[0].startDate, task[0].taskLength)}}</th>
-                <th ng-hide="isHidden"></th>         
+                <th ng-hide="isHidden"></th>
             </tr>
         </thead>
 

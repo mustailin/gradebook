@@ -2,7 +2,7 @@
     <form name="administratorForm" ng-submit="submit()" novalidate>
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2>{{mode}} Administrator</h2>
+                <h2>{{mode}} Адміністратор</h2>
                 <span flex></span>
                 <md-button type="button" class="md-icon-button" ng-click="cancel()">
                     <md-icon>close</md-icon>
@@ -12,7 +12,7 @@
         <md-dialog-content>
             <div layout="column">
                 <md-input-container>
-                    <label>First Name</label>
+                    <label>Ім'я</label>
                     <input name="firstName" md-maxlength="45" required type="text" ng-model="administrator.firstName">
                     <div ng-messages="administratorForm.firstName.$error" ng-if="administratorForm.$submitted">
                         <div ng-message="required">First name is required.</div>
@@ -20,7 +20,7 @@
                     </div>
                 </md-input-container>
                 <md-input-container>
-                    <label>Last Name</label>
+                    <label>Прізвище</label>
                     <input name="lastName" md-maxlength="45" required type="text" ng-model="administrator.lastName">
                     <div ng-messages="administratorForm.lastName.$error" ng-if="administratorForm.$submitted">
                         <div ng-message="required">Last name is required.</div>
@@ -36,7 +36,7 @@
                     </div>
                 </md-input-container>
                 <md-input-container>
-                    <label>Password</label>
+                    <label>Пароль</label>
                     <input name="password" md-maxlength="16" required type="text" ng-model="administrator.password">
                     <div ng-messages="administratorForm.password.$error" ng-if="administratorForm.$submitted">
                         <div ng-message="required">Password is required.</div>
@@ -52,9 +52,9 @@
                     {{submitButton}}
                 </md-button>
                 <md-button type="button" ng-click="cancel()" class="md-primary">
-                    Cancel
+                    Відміна
                 </md-button>
-            </div>     
-        </div>   
+            </div>
+        </div>
     </form>
 </md-dialog>

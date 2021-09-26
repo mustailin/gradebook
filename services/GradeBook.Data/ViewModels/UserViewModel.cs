@@ -24,6 +24,21 @@ namespace GradeBook.Data.ViewModels
                     _ => throw new ArgumentOutOfRangeException(),
                 };
             }
+            set
+            {
+                switch (value)
+                {
+                    case RoleEnum.Admin:
+                        Role = "admin";
+                        break;
+                    case RoleEnum.Lecturer:
+                        Role = "lecturer";
+                        break;
+                    case RoleEnum.Student:
+                        Role = "student";
+                        break;
+                }
+            }
         }
     }
 
